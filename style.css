@@ -41,8 +41,13 @@ html {
     font-size: 1.3rem;
     font-weight: 700;
     color: #00d4ff;
+    text-decoration: none;
+    transition: 0.3s;
 }
 
+.logo:hover{
+    opacity: 0.6;
+}
 .nav-links{
     display: flex;
     
@@ -122,7 +127,12 @@ html {
 }
 
 .about {
-    padding: 120px 20px;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
 }
 
 .container {
@@ -138,7 +148,7 @@ html {
    
     font-size: 2rem;
     
-    margin-bottom: 40px;
+    margin-bottom: 0px;
     
     color: #00d4ff;
 
@@ -155,7 +165,12 @@ html {
 }
 
 .skills {
-    padding: 120px 20px;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
 }
 
 .skills h2{
@@ -178,4 +193,17 @@ html {
 
     margin-top: 50px;
 
+}
+
+.hidden {
+    opacity: 0;
+
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.show {
+    opacity: 1;
+
+    transform: translateY(0);
 }
