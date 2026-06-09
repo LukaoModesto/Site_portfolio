@@ -1,0 +1,181 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color:#0A0A0A;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 50px;
+
+    background-color: rgba(10, 10, 10, 0.8);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #00d4ff;
+}
+
+.nav-links{
+    display: flex;
+    
+    list-style: none;
+    
+    gap:30px;
+}
+
+.nav-links a{
+    text-decoration: none;
+    color:white;
+    transition: color 0.3 s;
+}
+
+.nav-links a:visited {
+    color: white;
+}
+.nav-links a:hover{
+    color:#00D4FF;
+    transition: color 2s;
+}
+
+
+
+.hero {
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+.hero h1{
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.hero h2{
+    font-size: 2rem;
+    color:#00D4FF;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color:#AAAAAA;
+    margin-bottom: 30px;
+}
+
+.hero-buttons a {  
+    
+    text-decoration: none;
+
+    margin: 0 8px;
+
+    color: white;
+
+    border: 2px solid #00D4FF;
+
+    padding: 12px 24px;
+
+    border-radius: 10px;
+
+    transition:  background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.hero-buttons a:hover {
+    background-color: #00d4ff;
+    color: black;
+
+    transform:translateY(-3px)
+}
+
+.about {
+    padding: 120px 20px;
+}
+
+.container {
+    max-width: 800px;
+    
+    margin: 0 auto;
+
+}
+
+.about h2{
+    
+    text-align: center;
+   
+    font-size: 2rem;
+    
+    margin-bottom: 40px;
+    
+    color: #00d4ff;
+
+}
+
+.about p{
+    text-align: center;
+
+    font-size:  1.2rem;
+
+    line-height: 1.8;
+
+    color: #CCCCCC
+}
+
+.skills {
+    padding: 120px 20px;
+}
+
+.skills h2{
+    text-align: center;
+
+    font-size: 2.5rem;
+    
+    color: #00d4ff;
+
+    margin-bottom: 20px;
+}
+
+.skills-grid {
+    
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+
+    margin-top: 50px;
+
+}
