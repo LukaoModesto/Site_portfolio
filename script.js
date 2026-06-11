@@ -3,6 +3,13 @@ const observer = new IntersectionObserver(
         entries.forEach((entry) => {
 
             if (entry.isIntersecting) {
+
+                const cards = document.querySelectorAll(".skill-card");
+
+                cards.forEach((card, index) => {
+                    card.style.transitionDelay = `${index * 0.15}s`;
+                });
+
                 entry.target.classList.add("show");
             }
 
@@ -60,6 +67,12 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
     });
 
+});
+
+const skillCards = document.querySelectorAll(".skill-card");
+
+skillCards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 0.15}s`;
 });
 
 const hamburger = document.querySelector(".hamburger");
