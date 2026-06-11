@@ -48,6 +48,21 @@ html {
 .logo:hover{
     opacity: 0.6;
 }
+.nav-click {
+    animation: navHighlight 0.8s ease;
+}
+
+@keyframes navHighlight {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .nav-links{
     display: flex;
     
@@ -82,24 +97,29 @@ html {
     align-items: center;
 
     text-align: center;
+
+    transition: 1.4s ;
 }
 
 .hero h1{
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 10px;
+    transition: 1.4s ;
 }
 
 .hero h2{
     font-size: 2rem;
     color:#00D4FF;
     margin-bottom: 20px;
+    transition: 1.4s ;
 }
 
 .hero p {
     font-size: 1.2rem;
     color:#AAAAAA;
     margin-bottom: 30px;
+    transition: 1.4s ;
 }
 
 .hero-buttons a {  
@@ -115,6 +135,7 @@ html {
     padding: 12px 24px;
 
     border-radius: 10px;
+    transition: 1.4s ;
 
     transition:  background-color 0.3s, color 0.3s, transform 0.3s;
 }
@@ -122,7 +143,7 @@ html {
 .hero-buttons a:hover {
     background-color: #00d4ff;
     color: black;
-
+    transition: 1.4s ;
     transform:translateY(-3px)
 }
 
@@ -273,4 +294,26 @@ html {
 .skill-card.fade-up.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.section-highlight {
+    animation: sectionHighlight 0.8s ease;
+}
+
+@keyframes sectionHighlight {
+
+    0% {
+        transform: scale(0.99);
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: scale(1.01);
+        box-shadow: 0 0 30px rgba(0, 212, 255, 0.15);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }

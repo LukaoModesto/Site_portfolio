@@ -40,3 +40,29 @@ aboutLink.addEventListener("click", () => {
 document.querySelectorAll(".skill-card").forEach((card, index) => {
     card.style.transitionDelay = `${index * 0.15}s`;
 });
+
+
+document.querySelectorAll(".nav-links a").forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        const targetId = link.getAttribute("href");
+
+        const section = document.querySelector(targetId);
+
+        if (!section) return;
+
+        setTimeout(() => {
+
+            section.classList.remove("section-highlight");
+
+            void section.offsetWidth;
+
+            section.classList.add("section-highlight");
+
+        }, 500);
+
+    });
+
+});
+
