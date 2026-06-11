@@ -85,7 +85,15 @@ html {
     transition: color 2s;
 }
 
+.hamburger {
+    display: none;
 
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    color: white;
+}
 
 .hero {
     height: 100vh;
@@ -121,7 +129,16 @@ html {
     margin-bottom: 30px;
     transition: 1.4s ;
 }
+.hero-buttons {
+    opacity: 0;
+    transform: translateY(30px);
+}
 
+.hero-show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 0.8s ease;
+}
 .hero-buttons a {  
     
     text-decoration: none;
@@ -330,7 +347,7 @@ html {
 .projects h2{
     text-align: center;
 
-    font-size: 2.5 rem;
+    font-size: 2.5rem;
 
     color: #00d4ff;
 
@@ -517,33 +534,129 @@ html {
 
     font-size: 0.9rem;
 }
+.overlay{
+    position: fixed;
+    inset: 0;
 
+    background: rgba(0,0,0,0.5);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: 0.3s;
+
+    z-index: 998;
+}
+
+.overlay.active{
+    opacity: 1;
+    visibility: visible;
+}
 
 @media (max-width: 768px) {
 
+    
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+    .mobile-menu{
+        position: fixed;
+
+        top: 85px;
+        right: 20px;
+
+        width: 240px;
+
+        background: rgba(17,17,17,0.95);
+
+        border: 1px solid rgba(0,212,255,0.2);
+
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+        border-radius: 16px;
+
+        backdrop-filter: blur(15px);
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 15px;
+
+        gap: 12px;
+
+        opacity: 0;
+
+        visibility: hidden;
+
+        transform: translateY(-20px);
+
+        transition: all 0.3s ease;
+
+        z-index: 999;
+    }
+    .mobile-menu.active{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    .mobile-menu a{
+        color: white;
+
+        text-decoration: none;
+
+        padding: 10px;
+
+        border-radius: 8px;
+
+        opacity: 0;
+
+        transform: translateX(15px);
+    }
+    .mobile-menu.active a{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    .mobile-menu.active a:nth-child(1){
+        transition: all 0.3s ease 0.05s;
+    }
+    .mobile-menu.active a:nth-child(2){
+        transition: all 0.3s ease 0.1s;
+    }
+    .mobile-menu.active a:nth-child(3){
+        transition: all 0.3s ease 0.15s;
+    }
+    .mobile-menu.active a:nth-child(4){
+        transition: all 0.3s ease 0.2s;
+    }
+    .mobile-menu.active a:nth-child(5){
+        transition: all 0.3s ease 0.25s;
+    }
+    .mobile-menu.active a:hover{
+        background: rgba(0, 212, 255, 0.1);
+        color: #00D4FF;
+    }
+    .hamburger{
+        display: block;
+        color: #00D4FF;
+    } 
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .logo {
+        max-width: 90px;
+        line-height: 1.1;
+    }
     .skills-grid {
         grid-template-columns: 1fr;
     }
     .projects-grid{
         grid-template-columns: 1fr;
     }
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    .nav-links a {
-        font-size: 0.9rem;
-    }
-
-    .logo {
-        max-width: 90px;
-        line-height: 1.1;
-    }
-
     .footer-links{
         flex-wrap: wrap;
     }

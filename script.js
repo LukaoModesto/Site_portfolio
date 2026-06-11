@@ -23,7 +23,8 @@ const aboutLink = document.getElementById("about-link");
 
 const aboutTitle = document.getElementById("about-title");
 
-aboutLink.addEventListener("click", () => {
+if (aboutLink && aboutTitle) {
+    aboutLink.addEventListener("click", () => {
 
     setTimeout(() => {
 
@@ -33,9 +34,9 @@ aboutLink.addEventListener("click", () => {
 
         aboutTitle.classList.add("about-click-animation");
 
-    }, 600);
-
-});
+        }, 600);
+    });
+}
 
 document.querySelectorAll(".nav-links a").forEach((link) => {
 
@@ -61,3 +62,62 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
 
 });
 
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".overlay");
+
+hamburger.addEventListener("click", () => {
+
+    mobileMenu.classList.toggle("active");
+    overlay.classList.toggle("active");
+
+    if (mobileMenu.classList.contains("active")) {
+        hamburger.textContent = "✕";
+    } else {
+        hamburger.textContent = "☰";
+    }
+
+});
+
+document.querySelectorAll(".mobile-menu a").forEach((link) => {
+
+    link.addEventListener("click", () => {
+
+        mobileMenu.classList.remove("active");
+        overlay.classList.remove("active");
+
+        hamburger.textContent = "☰";
+
+    });
+
+});
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+        document.querySelector(".hero h1")
+            .classList.add("hero-show");
+    }, 200);
+
+    setTimeout(() => {
+        document.querySelector(".hero h2")
+            .classList.add("hero-show");
+    }, 400);
+
+    setTimeout(() => {
+        document.querySelector(".hero p")
+            .classList.add("hero-show");
+    }, 600);
+
+    setTimeout(() => {
+        document.querySelector(".hero-buttons")
+            .classList.add("hero-show");
+    }, 800);
+
+});
+
+overlay.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    overlay.classList.remove("active");
+    hamburger.textContent = "☰";
+});
